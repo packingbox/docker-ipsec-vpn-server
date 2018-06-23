@@ -145,7 +145,10 @@ conn l2tp-psk
 
 conn xauth-psk
   auto=add
-  leftsubnet=0.0.0.0/0
+# Disable send all traffice through VPN
+# leftsubnet=0.0.0.0/0
+# Enable split VPN Tunnel, only allow 10.10.100.0/24
+  leftsubnet=10.10.100.0/24
   rightaddresspool=$XAUTH_POOL
   modecfgdns1=$DNS_SRV1
   modecfgdns2=$DNS_SRV2
